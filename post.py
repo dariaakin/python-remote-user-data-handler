@@ -21,3 +21,5 @@ class Post:
             print("There is no common titles")
         else:
             print(repeated)
+
+        return repeated
