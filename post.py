@@ -17,9 +17,4 @@ class Post:
             else:
                 checked.append(title)
 
-        if not repeated:
-            print("There is no common titles")
-        else:
-            print(repeated)
-
         return repeated

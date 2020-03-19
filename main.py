@@ -11,6 +11,7 @@ USERS_URL: Final = "https://jsonplaceholder.typicode.com/users"
 def handle_remote_data():
     posts_data = download_data(POSTS_URL)
     users_data = download_data(USERS_URL)
+    print(type(users_data))
 
     grouped_posts = {}
     titles_list = []
@@ -37,7 +38,11 @@ def handle_remote_data():
         user_object.get_closest_user(users_data)
         user_object.print_information()
 
-    Post.get_repeated_titles(titles_list)
+    repeat_titles = Post.get_repeated_titles(titles_list)
+    if len(repeat_titles) == 0:
+        print("There is no common title")
+    else:
+        print(repeat_titles)
 
 
 def download_data(url):
