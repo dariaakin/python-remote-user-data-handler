@@ -13,6 +13,7 @@ class TestPost(unittest.TestCase):
         result = Post.get_repeated_titles(self.list_titles)
         self.assertEqual(result, ['test title 3'])
         self.list_titles.append('test title 3')
+        # Checking duplicates
         result = Post.get_repeated_titles(self.list_titles)
         self.assertEqual(result, ['test title 3'])
 
